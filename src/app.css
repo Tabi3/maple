@@ -1,0 +1,184 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes moveY {
+	from {
+		transform: translateY(0%);
+	}
+	to {
+		transform: translateY(50%);
+	}
+}
+@keyframes moveX {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(25%);
+	}
+}
+
+@layer components {
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	li,
+	a,
+	div {
+		@apply relative overflow-hidden;
+	}
+	:root {
+		@apply font-semibold font-sans;
+		--gradient: linear-gradient(45deg, #5365ff, #9370f6, #e280e9, #fc91d4, #f7b69b, #f1d46d);
+		--gradient-loop: linear-gradient(
+			45deg,
+			#5365ff,
+			#9370f6,
+			#e280e9,
+			#fc91d4,
+			#f7b69b,
+			#f1d46d,
+			#f1d46d,
+			#f7b69b,
+			#fc91d4,
+			#e280e9,
+			#9370f6,
+			#5365ff,
+			#5365ff,
+			#9370f6,
+			#e280e9,
+			#fc91d4,
+			#f7b69b,
+			#f1d46d,
+			#f1d46d,
+			#f7b69b,
+			#fc91d4,
+			#e280e9,
+			#9370f6,
+			#5365ff
+		);
+		--gradient-2: linear-gradient(45deg, #3c4cad, #f04393);
+		--gradient-2-loop: linear-gradient(45deg, #3c4cad, #f04393, #3c4cad, #f04393, #3c4cad);
+		--gradient-3: linear-gradient(45deg, #240e8b, #e8a49c);
+		--gradient-3-loop: linear-gradient(45deg, #240e8b, #e8a49c, #240e8b, #e8a49c, #240e8b);
+		--hovered-obj: '';
+	}
+	div,
+	body {
+		@apply dark:bg-[#111] dark:!text-white  bg-white duration-100 relative;
+	}
+	.pastel-line-y::after {
+		@apply w-[2px] text-transparent absolute bg-repeat h-[400%] top-[-200%];
+		background-size: 2px 50%;
+		content: 'a';
+		background-image: var(--gradient-2-loop);
+		animation: moveY 2s infinite linear;
+	}
+	.pastel-line-y li {
+		@apply ml-2;
+	}
+	.gr-ul::after,
+	.pastel-line-x::after {
+		@apply h-[2px] text-transparent absolute bg-no-repeat w-[800%] duration-200;
+		background-size: 0 2px, 0 2px;
+		left: -200%;
+		bottom: 0;
+		content: 'a';
+		animation: moveX 2s infinite linear;
+	}
+	.gr-ul::after {
+		background-image: var(--gradient-3-loop), var(--gradient-3-loop);
+	}
+	.pastel-line-x::after {
+		background-image: var(--gradient-loop), var(--gradient-loop);
+	}
+	.slow-blur {
+		transition: all 200ms;
+	}
+	.slow-blur:hover {
+		filter: blur(4px);
+	}
+	.gradient {
+		background-image: var(--gradient);
+	}
+	.gr-ul {
+		@apply bg-no-repeat bg-left-bottom duration-200 ease-in-out rounded-sm
+               p-1 items-center flex gap-4;
+	}
+	.gr-ul:hover::after {
+		background-size: 50% 2px;
+	}
+	.gr-ul:hover {
+		@apply dark:bg-[#181818];
+	}
+	.pastel-line-x::after {
+		background-size: 50% 2px;
+	}
+	.widget {
+		@apply dark:!bg-[#141414] dark:!text-white bg-white duration-100 
+                shadow-md rounded-md;
+	}
+	.expanded {
+		@apply !visible !opacity-100;
+	}
+	.closed {
+		@apply p-3 widget w-[8.5rem] flex gap-4 bg-inherit z-50 
+               invisible opacity-0 h-auto top-0 left-0 absolute;
+	}
+	.card {
+		@apply shadow-md dark:!bg-[#141414] p-4 rounded-md flex gap-8 flex-col pastel-line-x w-full;
+	}
+	.hov-btn {
+		@apply w-fit relative overflow-hidden p-4 rounded-md bg-[#ef4648] duration-200 flex gap-4 
+               items-center hover:bg-transparent hover:pastel-line-x text-white hover:text-inherit
+               px-8 hover:scale-105 active:scale-95;
+	}
+	.hov-btn::before {
+		@apply font-[boxicons] text-xl;
+	}
+	.hov-btn:hover img {
+		@apply opacity-100;
+	}
+	.banner {
+		@apply overflow-hidden flex items-center justify-center h-[1080px] font-mono flex-col gap-8 isolate;
+	}
+	.banner::after {
+		@apply absolute top-0 left-0 w-screen aspect-video bg-cover blur-md saturate-50;
+		background-image: url('https://images7.alphacoders.com/912/912059.jpg');
+		color: transparent;
+		content: 'a';
+		z-index: -1;
+	}
+	.banner::before {
+		@apply absolute top-0 left-0 w-full aspect-video bg-center bg-no-repeat;
+		background-image: url('https://images7.alphacoders.com/912/912059.jpg');
+		content: 'a';
+		background-position: top center;
+	}
+	.fading-mask {
+		--scrollbar-width: 8px;
+		--mask-height: 40px;
+		overflow-y: auto;
+		height: 40px;
+		--mask-image-content: linear-gradient(
+			to right,
+			transparent,
+			black var(--mask-height),
+			black calc(100% - var(--mask-height)),
+			transparent
+		);
+		--mask-size-content: calc(100% - var(--scrollbar-width)) 100%;
+		--mask-image-scrollbar: linear-gradient(black, black);
+		--mask-size-scrollbar: var(--scrollbar-width) 100%;
+		mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+		mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+		mask-position: 0 0, 100% 0;
+		mask-repeat: no-repeat, no-repeat;
+	}
+}
