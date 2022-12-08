@@ -74,7 +74,7 @@
 		@apply dark:bg-[#111] dark:!text-white  bg-white duration-100 relative;
 	}
 	.pastel-line-y::after {
-		@apply w-[2px] text-transparent absolute bg-repeat h-[400%] top-[-200%];
+		@apply w-[2px] text-transparent absolute bg-repeat h-[400%] top-[-200%] left-0;
 		background-size: 2px 50%;
 		content: 'a';
 		background-image: var(--gradient-2-loop);
@@ -85,10 +85,8 @@
 	}
 	.gr-ul::after,
 	.pastel-line-x::after {
-		@apply h-[2px] text-transparent absolute bg-no-repeat w-[800%] duration-200;
+		@apply h-[2px] text-transparent absolute bg-no-repeat w-[800%] duration-200 left-[-200%] bottom-0;
 		background-size: 0 2px, 0 2px;
-		left: -200%;
-		bottom: 0;
 		content: 'a';
 		animation: moveX 2s infinite linear;
 	}
@@ -128,16 +126,19 @@
 		@apply !visible !opacity-100;
 	}
 	.closed {
-		@apply p-3 widget w-[8.5rem] flex gap-4 bg-inherit z-50 
+		@apply p-3 widget w-[8.5rem] flex gap-4 bg-inherit z-50 mx-8
                invisible opacity-0 h-auto top-0 left-0 absolute;
 	}
 	.card {
 		@apply shadow-md dark:!bg-[#141414] p-4 rounded-md flex gap-8 flex-col pastel-line-x w-full;
 	}
+	.card h1 {
+		@apply text-4xl;
+	}
 	.hov-btn {
 		@apply w-fit relative overflow-hidden p-4 rounded-md bg-[#ef4648] duration-200 flex gap-4 
                items-center hover:bg-transparent hover:pastel-line-x text-white hover:text-inherit
-               px-8 hover:scale-105 active:scale-95;
+               px-8 hover:scale-105 active:scale-95 m-1;
 	}
 	.hov-btn::before {
 		@apply font-[boxicons] text-xl;
@@ -149,17 +150,38 @@
 		@apply overflow-hidden flex items-center justify-center h-[1080px] font-mono flex-col gap-8 isolate;
 	}
 	.banner::after {
-		@apply absolute top-0 left-0 w-screen aspect-video bg-cover blur-md saturate-50;
+		@apply absolute top-0 left-0 w-screen aspect-video bg-cover blur-md saturate-50 text-transparent -z-10;
 		background-image: url('https://images7.alphacoders.com/912/912059.jpg');
-		color: transparent;
 		content: 'a';
-		z-index: -1;
 	}
 	.banner::before {
-		@apply absolute top-0 left-0 w-full aspect-video bg-center bg-no-repeat;
+		@apply absolute top-0 left-0 w-full aspect-video bg-no-repeat;
 		background-image: url('https://images7.alphacoders.com/912/912059.jpg');
 		content: 'a';
 		background-position: top center;
+	}
+	.banner-inner-formatter {
+		@apply !bg-transparent w-screen flex gap-8 flex-col;
+	}
+	.banner-content-shell {
+		@apply w-screen p-8 flex;
+		background-color: rgba(0, 0, 0, 0.5)!important;
+	}
+	.banner-other-content {
+		@apply w-[1280px] m-auto !bg-transparent flex gap-4 items-center p-4;
+	}
+	.banner-content {
+		@apply !bg-transparent m-auto w-[1280px];
+	}
+	.banner-content h1 {
+		@apply text-9xl text-white flex items-center gap-8;
+	}
+	.banner-content p {
+		@apply text-3xl text-white;
+	}
+	.banner-others {
+		@apply flex flex-row gap-8 items-center w-1/6 rounded-md 
+		text-white justify-center py-4 bg-[rgba(0,0,0,0.5)];
 	}
 	.fading-mask {
 		--scrollbar-width: 8px;
@@ -180,5 +202,115 @@
 		mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
 		mask-position: 0 0, 100% 0;
 		mask-repeat: no-repeat, no-repeat;
+	}
+	li {
+		@apply p-1;
+	}
+	nav {
+		@apply shadow-md fixed bg-inherit z-50 
+		pastel-line-x w-screen;
+	}
+	nav .nav-content {
+		@apply top-0 left-0 mx-auto w-[1280px] flex flex-row gap-2 px-8 py-2;
+	}
+	nav form {
+		@apply inline-flex ml-auto gap-2;
+	}
+	nav form input[type='text'] {
+		@apply px-4 p-1 widget;
+	}
+	nav form button {
+		@apply p-3 widget;
+	}
+	footer {
+		@apply bg-[#efefef] shadow-md py-16 mt-16 flex items-center dark:bg-[#111];
+	}
+	.footer-contents {
+		@apply m-auto card flex-row grid w-[720px];
+		grid-template-columns: 1fr 2fr;
+	}
+	#hovered-obj {
+		@apply duration-200 p-2 text-slate-500;
+	}
+	.dropdowns {
+		@apply w-screen top-16 fixed h-0 z-50 overflow-visible;
+	}
+	.dropdown-shells {
+		@apply w-[1280px] mx-auto h-0 overflow-visible;
+	}
+	.main-container {
+		@apply m-auto w-[1280px] pt-20 p-2 overflow-visible px-8;
+	}
+	ul, .dark-box {
+		@apply pastel-line-y overflow-hidden rounded-md relative w-full bg-[#111] text-white;
+	}
+	.cs-works li {
+		@apply p-1 mr-1;
+	}
+	.left-sidebar {
+		@apply shadow-md fixed top-10 flex h-screen w-[20%] p-10 left-0 z-40 
+		dark:!bg-[#121212] flex-col gap-4;
+	}
+	.right-sidebar {
+		@apply shadow-md fixed top-10 flex h-screen w-[20%] p-10 right-0 z-40 
+		dark:!bg-[#121212] flex-col gap-4;
+	}
+	.left-sidebar ul,
+	.right-sidebar ul {
+		@apply pastel-line-y overflow-hidden relative rounded-md;
+	}
+	.bleed {
+		@apply col-span-2 overflow-visible p-4 flex gap-4;
+		--bg-image: url('');
+		--bg-color: #111;
+		background-image: var(--bg-image);
+		background-color: var(--bg-color);
+		background-position: 50%;
+		box-shadow: 0 0 0 100vmax var(--bg-color);
+		clip-path: inset(0 -100vmax);
+		background-color: var(--bg-color);
+	}
+	.dark .bleed {
+		--bg-color: #161616;
+	}
+	.bleed .card {
+		@apply backdrop-blur-md hover:scale-[1.01];
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	.dark .bleed .card {
+		background-color: rgba(0, 0, 0, 0.5)!important;
+	}
+	.bleed .sprite-container {
+		@apply bg-transparent w-full aspect-square flex items-center justify-center;
+	}
+	.text-shell {
+		@apply absolute bottom-0 left-0 w-full p-4 text-2xl;
+	}
+	.page-text {
+		@apply flex flex-col gap-8 text-justify;
+	}
+	.page-text h1 {
+		@apply text-3xl
+	}
+	.dark-box {
+		@apply p-4
+	}
+	td {
+		@apply border-slate-700 border-b-[1px] p-2;
+	}
+	table {
+		@apply table-auto border-collapse w-full;
+	}
+	
+	thead {
+		@apply font-bold
+	}
+	sprite {
+		@apply bg-transparent block bg-no-repeat rounded-lg;
+	}
+	.sprite-container img {
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }

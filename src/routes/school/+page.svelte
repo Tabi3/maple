@@ -1,27 +1,39 @@
-<div class="card w-2/3">
-	<h1 class="text-2xl">Welcome to the Computer Science output hub</h1>
-	<p>
-		As I said earlier in the homepage, this site will be used as a hub for the computer science
-		outputs like the static html files.
-	</p>
-	<div class="!bg-inherit">
-		<p class="float-right inline-block w-1/2 text-center">Now it works like a charm</p>
-		<ul class="pastel-line-y overflow-hidden rounded-md relative w-1/2 bg-[#111] text-white">
-			<li class="p-1 mr-1"><a href="../CS-works/index.html" class="gr-ul">This is work 1</a></li>
-			<li class="p-1 mr-1"><a href="../CS-works/index.html" class="gr-ul">This is work 2</a></li>
-			<li class="p-1 mr-1"><a href="../CS-works/index.html" class="gr-ul">This is work 3</a></li>
-			<li class="p-1 mr-1"><a href="../CS-works/index.html" class="gr-ul">This is work 4</a></li>
-		</ul>
-	</div>
-
-	<p class="float-right inline-block w-fit">float doesnt wanna work here. Typical css behavior.</p>
-	<h2 class="text-xl">Description of outputs</h2>
-	<p>
-		These outputs will show show a version of this specific part website. It will contain actual
-		sidebar items (but they won't function), Lorem Ipsum, And positioning of the cards.
-	</p>
+<div class="card">
+	<h1>UPDATED SITE JUMPSCARE</h1>
+	<p>Pretty neet eyy? anyway heres the stuff we gonna do</p>
 </div>
-<div class="w-1/3 grid grid-rows-2 gap-y-8">
-	<div class="card">As expected</div>
-	<div class="card">Flex and grid are really nice</div>
+
+<section class="bleed" style="--bg-image: url('src/images/Screenshot (109).png')">
+	<a href="./" class="card">
+		<div class="sprite-container">
+			<img src="./src/images/Khub.png" alt="" />
+		</div>
+		<div class="text-shell">
+			<p>KHUB demo</p>
+		</div>
+	</a>
+	<a href="./calculator" class="card">
+		<div class="sprite-container">
+			<img src="./src/images/Wolfram Alpha.png" alt="" />
+		</div>
+		<div class="text-shell">
+			<p>Wolfram demo</p>
+		</div>
+	</a>
+	<a href="./" class="card">
+		<div class="sprite-container">
+			<img src="./src/images/Maple Bot.png" alt="" />
+		</div>
+		<div class="text-shell">
+			<p>Maple demo</p>
+		</div>
+	</a>
+</section>
+<div class="card">
+	<h1>Site Descriptions</h1>
+	<p>
+		First Site is KHUB. Basically khub dashboard but reskinned. <br />
+		Second Site is Wolfram Alpha. Reskinned Wolfram Alpha basically. <br />
+		Third Site is For my Maple discord bot. Basically Botmanagament.
+	</p>
 </div>

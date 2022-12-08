@@ -1,25 +1,19 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 </script>
 
 <div class="banner">
-	<div class="!bg-transparent w-screen flex gap-8 flex-col">
-		<div style="background-color: rgba(0, 0, 0, 0.5);" class="w-screen p-8">
-			<div class="w-[1280px] m-auto !bg-transparent flex gap-4">
-				<div class="!bg-transparent flex flex-col gap-8">
-					<h1 class="text-9xl text-white flex items-center gap-8">
-						Cloudbound <i class="bx bxs-cloud" />
-					</h1>
-					<p class="text-3xl text-white">Data Bounded to the Clouds</p>
-				</div>
+	<div class="banner-inner-formatter">
+		<div class="banner-content-shell">
+			<div class="banner-content">
+				<h1>
+					Cloudbound <i class="bx bxs-cloud" />
+				</h1>
+				<p>Data Bounded to the Clouds</p>
 			</div>
 		</div>
-		<div class="w-[1280px] m-auto !bg-transparent flex gap-4 items-center p-4">
-			<a href="" class="hov-btn hover:!bg-[rgba(0,0,0,0.5)]">Random Ass Name</a>
-			<ul
-				class="flex flex-row gap-8 items-center w-1/6 rounded-md 
-					text-white justify-center py-4 bg-[rgba(0,0,0,0.5)]"
-			>
+		<div class="banner-other-content">
+			<a href="./CS-works" class="hov-btn hover:!bg-[rgba(0,0,0,0.5)]">Link to Framework Stuff</a>
+			<ul class="banner-others">
 				<li class=""><i class="bx bxs-home-alt-2" /></li>
 				<li class=""><i class="bx bxs-graduation" /></li>
 				<li class=""><i class="bx bx-math" /></li>
@@ -27,147 +21,195 @@
 		</div>
 	</div>
 </div>
-<div class="m-auto w-[1280px] pt-20 py-2">
-	<main class="grid grid-cols-2 gap-4 px-4">
-		<div class="card col-span-2">
-			<h1 class="text-3xl">What is Cloud Bound?</h1>
+<div class="main-container">
+	<main class="grid grid-cols-2 gap-8">
+		<div class="card col-span-2 intro">
+			<h1>Brief overview</h1>
 			<p>
 				Remember Maple? Yeah, the website design looked bad after a while. It was due to very poor
 				designing coming from my part. However, I have grown, therefore Cloud Bound changes that.
 			</p>
-			<h1>Cloud Bound also offers new features such as:</h1>
-			<ul class="pastel-line-y overflow-hidden rounded-md relative font-mono !bg-[#111] text-white">
-				<li class="p-1">Added widgets for school.</li>
-				<li class="p-1">Added Cloud storage.</li>
-				<li class="p-1">Added Account system.</li>
-			</ul>
-			<p>Don't forget about Maple Bot too.</p>
-			<button class="hov-btn bxl-discord relative isolate">
-				<img
-					src="https://cdn.discordapp.com/attachments/956813186026315777/1035516677913313280/unknown.png"
-					alt="Wolfram"
-					class="absolute opacity-0 m-auto
-					 w-full h-full top-0 left-0 p-4 blur-sm -z-10"
-				/>
-				Click here to invite Maple
-			</button>
+			<p>Cloudbound also offers new features such as:</p>
 		</div>
-		<div class="w-full p-4 flex flex-col gap-8">
-			<h1 class="text-2xl">Hello Teacher!</h1>
-			<p>
-				Just so you know This is temporary text. But since it's just a quarter project then i guess
-				this is ok. Its a svelte project so some features might not work for you like the dark mode
-				feature since i will preproccess it to static html.
-			</p>
-			<ul><span class="text-emerald-400">HOWEVER.</span> I will try to fix them.</ul>
-			<div class="py-2 pastel-line-y overflow-hidden relative rounded-md bg-[#111] text-white">
-				<table class="table-auto border-collapse ml-2 mr-2">
-					<thead>
-						<tr>
-							<td class="border-slate-600 border-b-[1px] font-bold p-2">Question</td>
-							<td class="border-slate-600 border-b-[1px] font-bold p-2">Answer</td>
-						</tr>
-					</thead>
-					<tr>
-						<td class="border-slate-600 border-b-[1px] p-2">This is a table</td>
-						<td class="border-slate-600 border-b-[1px] p-2">It is pretty neat</td>
-					</tr>
-					<tr>
-						<td class="border-slate-600 border-b-[1px] p-2">However they're hard to deal with</td>
-						<td class="border-slate-600 border-b-[1px] p-2">This is why Grids are superior</td>
-					</tr>
-					<tr>
-						<td class="border-slate-600 border-b-[1px] p-2">But tables existed before grids</td>
-						<td class="border-slate-600 border-b-[1px] p-2"
-							>so there are alot of websites that rely on tables</td
-						>
-					</tr>
-				</table>
+		<section
+			class="bleed"
+			style="--sprite: url('/src/images/Spritesheet.png'); 
+				   --bg-image: url('/src/images/background-banner.jpg')"
+		>
+			<div class="card">
+				<div class="sprite-container">
+					<sprite class="sprite-1" />
+				</div>
+				<div class="text-shell">
+					<p>Widgets for School</p>
+				</div>
 			</div>
-		</div>
+			<div class="card">
+				<div class="sprite-container">
+					<sprite class="sprite-2" />
+				</div>
+				<div class="text-shell">
+					<p>Cloud Storage</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="sprite-container">
+					<sprite class="sprite-3" />
+				</div>
+				<div class="text-shell">
+					<p>Accounts</p>
+				</div>
+			</div>
+		</section>
 		<div class="card">
-			<h1 class="text-3xl">Cloudbound Features</h1>
+			<h1>Cloudbound Features</h1>
 			<p>
 				Cloudbound is a cloud computing platform, meaning you can do calculations and store data
-				here to use on another device. Not only this, it also has
+				here to use on another device.
 			</p>
-			<ul class="pastel-line-y overflow-hidden rounded-md relative font-mono !bg-[#111] text-white">
-				<li class="p-1">Reskinning Websites</li>
-				<li class="p-1">Calendar Feature</li>
-				<li class="p-1">School tools (exclusive to PSHS CVC scholars)</li>
+			<p>Features include:</p>
+			<ul>
+				<li>Reskinning Websites</li>
+				<li>Calendar</li>
+				<li>School Tools (PSHS exclusive)</li>
 			</ul>
-			<p>The school tools are powered by Wolfram Alpha and Maple Bot (WIP).</p>
-			<h1 class="text-xl">Links to websites</h1>
-			<div class="flex flex-row ">
-				<a href="" class="hov-btn m-1 w-full relative isolate" id="Wolfram">
-					<img
-						src="https://www.wolframalpha.com/_next/static/images/Logo_1t99UmgS.svg"
-						alt="Wolfram"
-						class="absolute opacity-0 m-auto
-						 w-full h-full top-0 left-0 p-4 blur-sm -z-10"
-					/>
-					Wolfram Alpha
-				</a>
-				<a href="" class="hov-btn m-1 w-full relative isolate" id="PSHSCVC">
-					<img
-						src="https://khub.cvc.pshs.edu.ph/pluginfile.php/1/theme_moove/logo/1666863919/pshs_new_logo.png"
-						alt="Wolfram"
-						class="absolute opacity-0 m-auto
-						 w-full h-full top-0 left-0 p-4 blur-sm -z-10"
-					/>
-					PSHS Khub
-				</a>
-				<a href="" class="hov-btn m-1 w-full relative isolate" id="Maplebt">
-					<img
-						src="https://cdn.discordapp.com/attachments/956813186026315777/1035516677913313280/unknown.png"
-						alt="Wolfram"
-						class="absolute opacity-0 m-auto
-						 w-full h-full top-0 left-0 p-4 blur-sm -z-10"
-					/>
-					Maple Bot
-				</a>
+		</div>
+		<div class="services">
+			<h1>Services I used</h1>
+			<div class="flex h-full overflow-visible"
+			 	style="--sprite: url('src/images/Spritesheet.png')">
+				<button class="hov-btn">
+					<sprite class="Wolfram-sprite"/>
+					<div>Wolfram Alpha</div>
+				</button>
+				<button class="hov-btn">
+					<sprite class="Khub-sprite"/>
+					<div>PSHS KHUB</div>
+				</button>
+				<button class="hov-btn">
+					<sprite class="Maple-sprite"/>
+					<div>Maple Bot</div>
+				</button>
 			</div>
 		</div>
-		<div class="card">
-			<h1 class="text-3xl">Why use Cloudbound</h1>
+		<div class="page-text">
+			<h1>Hello Teacher! Again...</h1>
 			<p>
-				I admit Cloudbound is a weak alternative to competition, mainly google and other massive
-				tech companies. So if you picked Cloudbound then Idk what's going on in your mind bro.
+				Again Temporary text... But I guess it's okay because I managed to use sprites here even
+				though I just needed html elements for them. I also did an overhaul as you can see because
+				the site looks very different. I also made the website more compatible with 720p displays by
+				solving some padding stuff and limiting the entire website's width to be 1280px. Also you
+				may have noticed I added a css folder. This is because the css is very long and needs to be
+				put on another file.
 			</p>
-			<p>Here's a video about clouds... literally...</p>
 		</div>
-		<iframe
-			width="100%"
-			class="aspect-video rounded-md"
-			src="https://www.youtube.com/embed/EK_UOLsN72Q"
-			title="☁️ What is a Cloud? Crash Course Geography #10"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-		/>
-		<i class="col-span-2 pastel-line-x relative h-[2px] overflow-hidden rounded-full" />
-		<div class="col-span-2 card">
-			<h1 class="text-xl">REMINDERS</h1>
-			<ul class="pastel-line-y overflow-hidden rounded-md relative font-mono !bg-[#111] text-white">
-				<li class="p-1">99% of the features of this website hasn't been developed yet</li>
-				<li class="p-1">
-					The navbar has the accounts widget, the dark mode toggle, and the hyperlinks
-				</li>
-				<li class="p-1">
-					Only one of the hyperlinks work and that is <i class="bx bxs-graduation" /> which is the school
-					part
-				</li>
-				<li class="p-1">
-					The search bar is basically useless. Accounts have not been implemented yet. The school
-					hyperlink will be used as a hub for sites.
-				</li>
-				<li class="p-1">
-					Dark Mode also isn't persistent because cookie implementation is too hard.
-				</li>
+		<div class="card">
+			<h1>Computer-Science Notes</h1>
+			<ul>
+				<li>99% of the wesite has not been implemented</li>
+				<li>The navbar has the account widget but it shows the hyperlinks instead</li>
+				<li>Only one hyperlink works at the moment and that is <i class="bx bxs-graduation" /></li>
+				<li>The search bar is useless</li>
 			</ul>
+		</div>
+		<div class="dark-box col-span-2">
+			<table>
+				<thead>
+					<tr>
+						<td>Column 1</td>
+						<td>Column 2</td>
+					</tr>
+				</thead>
+				<tr>
+					<td>This is a Table</td>
+					<td>It is pretty neet</td>
+				</tr>
+				<tr>
+					<td>However they're hard to deal with</td>
+					<td>This is why grids are superior</td>
+				</tr>
+				<tr>
+					<td>But Tables existed before grids</td>
+					<td>So many websites rely on tables</td>
+				</tr>
+			</table>
 		</div>
 	</main>
 </div>
 
 <style>
+	.banner-others::after {
+		background-image: none;
+	}
+	.services .hov-btn {
+		position: relative;
+		width: 100%;
+		text-align: center;
+	}
+	.services .hov-btn div {
+		position: absolute;
+		background-color: transparent;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
+	}
+	.services .hov-btn sprite {
+		position: absolute;
+		transition: all 200ms;
+		object-fit: cover;
+		opacity: 0;
+		top: 0;
+		left: 0;
+	}
+	.services .hov-btn:hover div {
+		color: #ef4648 !important;
+	}
+	.services .hov-btn:hover sprite {
+		opacity: 1;
+		filter: blur(2px);
+	}
+	.services {
+		overflow: visible;
+		gap: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.services h1 {
+		font-size: 2rem;
+	}
+	.intro {
+		text-align: center;
+		padding: 6.75% 12.5%;
+	}
+	.sprite-1 {
+		background: var(--sprite) -732px 0;
+		width: 136px;
+		height: 88px;
+	}
+	.sprite-2 {
+		background: var(--sprite) -869px -44px;
+		width: 40px;
+		height: 40px;
+	}
+	.sprite-3 {
+		background: var(--sprite) -869px -3px;
+		width: 40px;
+		height: 40px;
+	}
+	.Khub-sprite {
+		background: var(--sprite) 0 0;
+		width: 474px;
+		height: 1080px;
+	}
+	.Wolfram-sprite {
+		background: var(--sprite) -475px -426px;
+		background-position-x: -800px;
+		width: 877px;
+		height: 1080px;
+	}
+	.Maple-sprite {
+		background: var(--sprite) -475px 0px;
+		width: 256px;
+		height: 426px;
+	}
 </style>

@@ -64,24 +64,21 @@
 </script>
 
 <svelte:body class="duration-100" />
-<div
-	class="shadow-md fixed bg-inherit z-50 
-		   pastel-line-x w-screen"
->
-	<div class="top-0 left-0 mx-auto w-[1280px] flex flex-row gap-2 py-2">
+<nav>
+	<div class="nav-content">
 		<button class="bx bxs-user p-3 widget ho" on:click={expacc} />
 		<button class="bx bxs-moon p-3 widget ho" on:click={darkmode} />
-		<button class="bx bxs-grid-alt p-3 widget ho" on:click={exphls} />
-		<p id="hovered-obj" class="duration-200 opacity-0 p-2 text-slate-500" />
+		<button class="bx bxs-dashboard p-3 widget ho" on:click={exphls} />
+		<p id="hovered-obj" class="opacity-0"/>
 
-		<form action="" class="inline-flex ml-auto gap-2">
-			<input type="text" class="px-4 p-1 widget" placeholder="search" />
-			<button class="bx bxs-search p-3 widget" />
+		<form action="">
+			<input type="text" placeholder="search" />
+			<button class="bx bxs-search" />
 		</form>
 	</div>
-</div>
-<div class="w-screen top-16 fixed h-0 z-50 overflow-visible">
-	<div class="w-[1280px] mx-auto h-0 overflow-visible">
+</nav>
+<div class="dropdowns">
+	<div class="dropdown-shells">
 		<div class="closed flex-wrap" id="hls">
 			<a href="/" class="gr-ul aspect-square"><i class="bx bxs-home-alt-2" /></a>
 			<a href="/school" class="gr-ul aspect-square"><i class="bx bxs-graduation" /></a>
@@ -97,8 +94,8 @@
 </div>
 
 <slot />
-<div class="bg-[#efefef] shadow-md py-16 mt-16 flex items-center">
-	<div class="m-auto card flex-row grid w-[1280px]" style="grid-template-columns: 1fr 2fr;">
+<footer>
+	<div class="footer-contents">
 		<div class="!bg-inherit">
 			This is the footer. If you're at the school tab then you may see it bugged. this is because
 			the body element is still too short
@@ -108,4 +105,4 @@
 			the site description, vision or mission.
 		</div>
 	</div>
-</div>
+</footer>
