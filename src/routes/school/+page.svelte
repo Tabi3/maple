@@ -6,7 +6,7 @@
 <section class="bleed" style="--bg-image: url('src/images/Screenshot (109).png')">
 	<a href="./" class="card">
 		<div class="sprite-container">
-			<img src="./src/images/Khub.png" alt="" />
+			<sprite class="Khub-sprite" />
 		</div>
 		<div class="text-shell">
 			<p>KHUB demo</p>
@@ -14,7 +14,7 @@
 	</a>
 	<a href="./calculator" class="card">
 		<div class="sprite-container">
-			<img src="./src/images/Wolfram Alpha.png" alt="" />
+			<sprite class="Wolfram-sprite" />
 		</div>
 		<div class="text-shell">
 			<p>Wolfram demo</p>
@@ -22,7 +22,7 @@
 	</a>
 	<a href="./" class="card">
 		<div class="sprite-container">
-			<img src="./src/images/Maple Bot.png" alt="" />
+			<sprite class="Maple-sprite" />
 		</div>
 		<div class="text-shell">
 			<p>Maple demo</p>
@@ -37,3 +37,21 @@
 		Third Site is For my Maple discord bot. Basically Botmanagament.
 	</p>
 </div>
+<style>
+	.Khub-sprite {
+		background: var(--sprite) 0 0;
+		width: 474px;
+		height: 1080px;
+	}
+	.Wolfram-sprite {
+		background: var(--sprite) -475px -426px;
+		background-position-x: -800px;
+		width: 877px;
+		height: 1080px;
+	}
+	.Maple-sprite {
+		background: var(--sprite) -475px 0px;
+		width: 256px;
+		height: 426px;
+	}
+</style>
